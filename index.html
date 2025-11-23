@@ -1,32 +1,25 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Transform your business with our innovative solutions. Trusted by thousands of customers worldwide.">
-    <meta name="keywords" content="business solutions, innovation, technology, services">
-    <meta name="author" content="Your Company">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Your Business Solutions Partner">
-    <meta property="og:description" content="Transform your business with our innovative solutions.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwebsite.com">
-    
-    <title>Your Business Solutions Partner | Transform Your Success</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Custom Styles -->
+    <meta name="description" content="Focus Learning Solutions - Professional training and consulting services since 1996">
+    <meta name="keywords" content="training, consulting, learning solutions, Malaysia, professional development">
+    <title>Focus Learning Solutions</title>
     <style>
         :root {
-            --primary: #0066cc;
-            --secondary: #00cc99;
-            --accent: #ff6600;
-            --heading-font: Arial, sans-serif;
-            --body-font: 'Segoe UI', sans-serif;
+            --color-primary: #01807e;
+            --color-primary-light: #00b5b5;
+            --color-primary-dark: #00a3a3;
+            --color-accent: #7cd1f9;
+            --color-accent-hover: #78cbf2;
+            --color-accent-active: #70bce0;
+            --color-text: #333333;
+            --color-text-muted: rgba(0,0,0,0.64);
+            --color-border: rgba(0,0,0,0.14);
+            --spacing-base: 8px;
+            --border-radius-default: 5px;
+            --transition-default: 300ms ease;
         }
         
         * {
@@ -36,250 +29,638 @@
         }
         
         body {
-            font-family: var(--body-font);
-            line-height: 1.6;
-            color: #333;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--color-text);
+            line-height: 1.5;
+            font-size: 16px;
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--heading-font);
-            line-height: 1.2;
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        /* Custom utility classes */
-        .text-primary { color: var(--primary); }
-        .text-secondary { color: var(--secondary); }
-        .text-accent { color: var(--accent); }
-        .bg-primary { background-color: var(--primary); }
-        .bg-secondary { background-color: var(--secondary); }
-        .bg-accent { background-color: var(--accent); }
-        
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
+        .btn {
+            padding: 10px 24px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-default);
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
         }
         
-        /* Focus styles for accessibility */
-        *:focus {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
+        .btn-primary {
+            background: var(--color-accent);
+            color: #ffffff;
         }
         
-        /* Button hover effects */
         .btn-primary:hover {
-            background-color: #0052a3;
+            background: var(--color-accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+            box-shadow: 0 4px 12px rgba(124, 209, 249, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #efefef;
+            color: #555555;
         }
         
         .btn-secondary:hover {
-            background-color: #00a67e;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 204, 153, 0.3);
+            background: #e8e8e8;
         }
         
-        /* Form styles */
-        .form-input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        .card {
+            background: #ffffff;
+            border-radius: 5px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: var(--transition-default);
         }
         
-        /* Animation classes */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 10px 13px;
+            border: 1px solid var(--color-border);
+            border-radius: 2px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #6db8ff;
+            box-shadow: 0 0 0 3px rgba(43,114,165,0.29);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.05em;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: opacity 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .hero {
+            margin-top: 72px;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-text p {
+            font-size: 18px;
+            color: var(--color-text-muted);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        
+        .hero-image {
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+            border-radius: 16px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+        
+        .hero-image-content {
+            text-align: center;
+            color: #ffffff;
+        }
+        
+        .hero-image-content h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+        
+        .section {
+            padding: 48px 0;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 48px;
+            color: var(--color-primary);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .service-card {
+            text-align: center;
+            padding: 32px;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #ffffff;
+        }
+        
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--color-primary);
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #f8f8f8 0%, #efefef 100%);
+            padding: 64px 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+        
+        .contact-form {
+            background: #ffffff;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 14px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        
+        textarea.input-field {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .contact-info {
+            padding: 32px;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: var(--color-primary);
+        }
+        
+        .info-item {
+            margin-bottom: 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            flex-shrink: 0;
+        }
+        
+        .info-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--color-primary);
+        }
+        
+        .info-content p {
+            color: var(--color-text-muted);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-decoration: none;
+            transition: var(--transition-default);
+        }
+        
+        .social-link:hover {
+            background: var(--color-accent);
+            transform: translateY(-4px);
+        }
+        
+        footer {
+            background: var(--color-primary);
+            color: #ffffff;
+            padding: 48px 0 24px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 32px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--color-accent);
+        }
+        
+        .footer-column p, .footer-column a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 1.8;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--color-accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-bottom p {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+        }
+        
+        .footer-legal {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .footer-legal a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-legal a:hover {
+            color: var(--color-accent);
+        }
+        
+        .mobile-menu {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            
+            .mobile-menu {
+                display: block;
+                background: none;
+                border: none;
+                color: #ffffff;
+                font-size: 24px;
+                cursor: pointer;
             }
-        }
-        
-        .animate-fade-in {
-            animation: fadeInUp 0.6s ease-out;
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-text h1 {
+                font-size: 32px;
+            }
+            
+            .hero-image {
+                height: 250px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded">
-        Skip to main content
-    </a>
-    
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-50" role="navigation" aria-label="Main navigation">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="#" class="text-2xl font-bold text-primary" aria-label="Home">
-                        YourBrand
-                    </a>
+    <header>
+        <nav class="container">
+            <div class="logo">FOCUS LEARNING</div>
+            <ul class="nav-links">
+                <li><a href="#flc">FLC (MALAYSIA)</a></li>
+                <li><a href="#focus">OUR FOCUS</a></li>
+                <li><a href="#footprint">OUR FOOTPRINT</a></li>
+                <li><a href="#team">OUR TEAM</a></li>
+                <li><a href="#programs">PUBLIC PROGRAMS</a></li>
+                <li><a href="#appointment">APPOINTMENT</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>FOCUS LEARNING SOLUTIONS</h1>
+                    <p>Since 1996, Focus Learning have been engaged as consultants, facilitators, as well as trainers to a wide and diversified range of organizations and countries. We offer a wide variety of programs to help transform our clients.</p>
+                    <a href="#contact" class="btn btn-primary">DISCOVER MORE</a>
                 </div>
-                
-                <!-- Mobile menu button -->
-                <button type="button" 
-                        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-100"
-                        id="mobile-menu-button"
-                        aria-expanded="false"
-                        aria-controls="mobile-menu">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-                
-                <!-- Desktop menu -->
-                <div class="hidden md:flex md:items-center md:space-x-8">
-                    <a href="#features" class="text-gray-700 hover:text-primary transition-colors">Features</a>
-                    <a href="#testimonials" class="text-gray-700 hover:text-primary transition-colors">Testimonials</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
-                </div>
-            </div>
-            
-            <!-- Mobile menu -->
-            <div class="hidden md:hidden" id="mobile-menu">
-                <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="#features" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">Features</a>
-                    <a href="#testimonials" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">Testimonials</a>
-                    <a href="#contact" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="bg-gradient-to-br from-blue-50 to-green-50 py-20 lg:py-32" aria-labelledby="hero-heading">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center animate-fade-in">
-                    <h1 id="hero-heading" class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                        Transform Your Business with 
-                        <span class="text-primary">Innovation</span>
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                        Unlock your potential with our cutting-edge solutions designed to drive growth and maximize efficiency.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button class="btn-primary bg-primary text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-                                onclick="scrollToSection('contact')">
-                            Get Started Today
-                        </button>
-                        <button class="btn-secondary bg-secondary text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-                                onclick="scrollToSection('features')">
-                            Learn More
-                        </button>
+                <div class="hero-image">
+                    <div class="hero-image-content">
+                        <h2>27+ Years</h2>
+                        <p>of Excellence in Learning</p>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- Features Section -->
-        <section id="features" class="py-20" aria-labelledby="features-heading">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 id="features-heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                        Why Choose Us
-                    </h2>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Discover the features that set us apart from the competition
-                    </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="card service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>OUR FOCUS</h3>
+                    <p>Targeted learning solutions designed to meet your specific organizational needs and goals.</p>
                 </div>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Feature 1 -->
-                    <article class="text-center p-6 rounded-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Lightning Fast</h3>
-                        <p class="text-gray-600">
-                            Experience unparalleled speed and performance with our optimized solutions that deliver results in real-time.
-                        </p>
-                    </article>
-                    
-                    <!-- Feature 2 -->
-                    <article class="text-center p-6 rounded-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Secure & Reliable</h3>
-                        <p class="text-gray-600">
-                            Your data is protected with enterprise-grade security measures and 99.9% uptime guarantee.
-                        </p>
-                    </article>
-                    
-                    <!-- Feature 3 -->
-                    <article class="text-center p-6 rounded-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">24/7 Support</h3>
-                        <p class="text-gray-600">
-                            Our dedicated support team is always ready to help you succeed with round-the-clock assistance.
-                        </p>
-                    </article>
+                <div class="card service-card">
+                    <div class="service-icon">🌍</div>
+                    <h3>OUR FOOTPRINT</h3>
+                    <p>Global reach with local expertise, serving clients across multiple countries and industries.</p>
+                </div>
+                <div class="card service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>OUR TEAM</h3>
+                    <p>Expert facilitators and consultants with decades of combined experience in transformational learning.</p>
+                </div>
+                <div class="card service-card">
+                    <div class="service-icon">📚</div>
+                    <h3>PUBLIC PROGRAMS</h3>
+                    <p>Open enrollment programs designed to enhance professional skills and personal development.</p>
                 </div>
             </div>
-        </section>
-        
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-20 bg-gray-50" aria-labelledby="testimonials-heading">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 id="testimonials-heading" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                        What Our Clients Say
-                    </h2>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Join thousands of satisfied customers who have transformed their business with us
-                    </p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label>NAME *</label>
+                            <div class="form-row">
+                                <input type="text" class="input-field" placeholder="FIRST" required>
+                                <input type="text" class="input-field" placeholder="LAST" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>EMAIL *</label>
+                            <input type="email" class="input-field" required>
+                        </div>
+                        <div class="form-group">
+                            <label>MESSAGE *</label>
+                            <textarea class="input-field" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">SEND MESSAGE</button>
+                    </form>
                 </div>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Testimonial 1 -->
-                    <blockquote class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="flex text-accent">
-                                <span aria-label="5 out of 5 stars">★★★★★</span>
-                            </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h4>Address</h4>
+                            <p>Unit 516, Kelana Centre Point<br>
+                            Block A, Jalan SS7/19<br>
+                            47301 Petaling Jaya<br>
+                            Selangor, Malaysia</p>
                         </div>
-                        <p class="text-gray-600 mb-4 italic">
-                            "This platform has completely revolutionized how we handle our operations. The efficiency gains have been remarkable."
-                        </p>
-                        <footer>
-                            <cite class="font-semibold text-gray-900 not-italic">Sarah Johnson</cite>
-                            <p class="text-sm text-gray-500">CEO, TechCorp</p>
-                        </footer>
-                    </blockquote>
-                    
-                    <!-- Testimonial 2 -->
-                    <blockquote class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="flex text-accent">
-                                <span aria-label="5 out of 5 stars">★★★★★</span>
-                            </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📱</div>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <p>Whatsapp: +601-9437-5242<br>
+                            Telephone: +603-7612-9141<br>
+                            +603-7612-9142<br>
+                            Cellphone: +601-9315-0209</p>
                         </div>
-                        <p class="text-gray-600 mb-4 italic">
-                            "Outstanding service and support. The team went above and beyond to ensure our success. Highly recommended!"
-                        </p>
-                        <footer>
-                            <cite class="font-semibold text-gray-900 not-italic">Michael Chen</cite>
-                            <p class="text-sm text-gray-500">CTO, InnovateLabs</p>
-                        </footer>
-                    </blockquote>
-                    
-                    <!-- Testimonial 3 -->
-                    <blockquote class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="flex text-accent">
-                                <span aria-label="5 out of 5 stars">★★★★★</span>
-                            </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>hamzah@focuslearning.com.my<br>
+                            malik@focuslearning.com.my</p>
                         </div>
-                        <p class="text-
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🌐</div>
+                        <div class="info-content">
+                            <h4>Website</h4>
+                            <p>www.focuslearning.com.my</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+                        <a href="#" class="social-link" aria-label="Youtube">▶</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>About Focus Learning</h3>
+                    <p>Since 1996, we have been transforming organizations through innovative learning solutions, expert consultation, and world-class training programs. Our commitment to excellence has made us a trusted partner for businesses across Malaysia and beyond.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="#flc">FLC (Malaysia)</a></li>
+                        <li><a href="#focus">Our Focus</a></li>
+                        <li><a href="#footprint">Our Footprint</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#programs">Public Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <p>Facebook<br>
+                    Twitter<br>
+                    Youtube<br>
+                    Linkedin-in</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2023 Focus Learning Solutions</p>
+                <div class="footer-legal">
+                    <a href="#">PRIVACY POLICY</a>
+                    <a href="#">TERMS & SERVICES</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
