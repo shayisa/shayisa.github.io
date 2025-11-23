@@ -3,408 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Focus Learning Solutions - Professional training and consulting services since 1996">
-    <meta name="keywords" content="training, consulting, learning solutions, Malaysia, professional development">
+    <meta name="description" content="Focus Learning Solutions - Transform your organization with expert consulting, facilitation, and training since 1996">
+    <meta name="keywords" content="Focus Learning Solutions, FLC Malaysia, training, consulting, facilitation">
     <title>Focus Learning Solutions</title>
     <style>
-        :root {
-            --color-primary: #01807e;
-            --color-primary-light: #00b5b5;
-            --color-primary-dark: #00a3a3;
-            --color-accent: #7cd1f9;
-            --color-accent-hover: #78cbf2;
-            --color-accent-active: #70bce0;
-            --color-text: #333333;
-            --color-text-muted: rgba(0,0,0,0.64);
-            --color-border: rgba(0,0,0,0.14);
-            --spacing-base: 8px;
-            --border-radius-default: 5px;
-            --transition-default: 300ms ease;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        :root {
+            --color-primary: #01807e;
+            --color-accent: #7cd1f9;
+            --color-text: #000000;
+            --color-text-secondary: rgba(0,0,0,.65);
+            --spacing-base: 8px;
+            --border-radius-default: 5px;
+            --transition-default: 300ms ease;
+        }
+        
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: var(--color-text);
-            line-height: 1.5;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 16px;
-            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+            line-height: 1.5;
+            color: #000000;
+            background: linear-gradient(135deg, #7cd1f9 0%, #70bce0 50%, #c9dae1 100%);
+            min-height: 100vh;
         }
         
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .btn {
-            padding: 10px 24px;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition-default);
-            display: inline-block;
-            text-decoration: none;
+        .hero-section {
+            background: #01807e;
+            color: #ffffff;
+            padding: 45px 20px;
             text-align: center;
-        }
-        
-        .btn-primary {
-            background: var(--color-accent);
-            color: #ffffff;
-        }
-        
-        .btn-primary:hover {
-            background: var(--color-accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(124, 209, 249, 0.4);
-        }
-        
-        .btn-secondary {
-            background: #efefef;
-            color: #555555;
-        }
-        
-        .btn-secondary:hover {
-            background: #e8e8e8;
-        }
-        
-        .card {
-            background: #ffffff;
-            border-radius: 5px;
-            padding: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: var(--transition-default);
-        }
-        
-        .card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transform: translateY(-4px);
-        }
-        
-        .input-field {
-            width: 100%;
-            padding: 10px 13px;
-            border: 1px solid var(--color-border);
-            border-radius: 2px;
-            font-size: 14px;
-            transition: border-color 0.2s;
-            font-family: inherit;
-        }
-        
-        .input-field:focus {
-            outline: none;
-            border-color: #6db8ff;
-            box-shadow: 0 0 0 3px rgba(43,114,165,0.29);
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-            padding: 16px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: 0.05em;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 14px;
-            transition: opacity 0.3s;
-            position: relative;
-        }
-        
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--color-accent);
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-        
-        .hero {
-            margin-top: 72px;
-            padding: 80px 0;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
             position: relative;
             overflow: hidden;
         }
         
-        .hero:before {
+        .hero-section::before {
             content: '';
             position: absolute;
             top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
-            opacity: 0.1;
-            border-radius: 50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, #7cd1f9 0%, transparent 70%);
+            opacity: 0.2;
+            animation: pulse 4s ease-in-out infinite;
         }
         
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
         
-        .hero-text h1 {
-            font-size: 48px;
+        .hero-title {
+            font-size: 32px;
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero-text p {
-            font-size: 18px;
-            color: var(--color-text-muted);
-            margin-bottom: 32px;
-            line-height: 1.6;
-        }
-        
-        .hero-image {
-            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
-            border-radius: 16px;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-        }
-        
-        .hero-image-content {
-            text-align: center;
-            color: #ffffff;
-        }
-        
-        .hero-image-content h2 {
-            font-size: 32px;
             margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
         }
         
-        .section {
-            padding: 48px 0;
-        }
-        
-        .section-title {
-            font-size: 32px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 48px;
-            color: var(--color-primary);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-        }
-        
-        .service-card {
-            text-align: center;
-            padding: 32px;
-        }
-        
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 24px;
-            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            color: #ffffff;
-        }
-        
-        .service-card h3 {
+        .hero-subtitle {
             font-size: 20px;
+            font-weight: 500;
+            opacity: 0.95;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 8px;
+            max-width: 768px;
+            margin: 32px auto;
+            padding: 0 20px;
+        }
+        
+        .nav-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: all 300ms ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+            border-color: #7cd1f9;
+            background: linear-gradient(135deg, #ffffff 0%, #efefef 100%);
+        }
+        
+        .nav-card-title {
+            font-size: 14px;
             font-weight: 600;
-            margin-bottom: 16px;
-            color: var(--color-primary);
+            color: #01807e;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         
-        .contact-section {
-            background: linear-gradient(135deg, #f8f8f8 0%, #efefef 100%);
-            padding: 64px 0;
+        .content-wrapper {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 32px 20px;
         }
         
-        .contact-grid {
+        .info-section {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 45px 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section-header {
+            font-size: 28px;
+            font-weight: 700;
+            color: #01807e;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid #7cd1f9;
+        }
+        
+        .info-text {
+            font-size: 18px;
+            line-height: 1.5;
+            color: rgba(0,0,0,.65);
+            margin-bottom: 24px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #7cd1f9;
+            color: #ffffff;
+            padding: 10px 24px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 300ms ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .cta-button:hover {
+            background: #78cbf2;
+        }
+        
+        .cta-button:active {
+            background: #70bce0;
+        }
+        
+        .split-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 48px;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+        
+        @media (max-width: 768px) {
+            .split-container {
+                grid-template-columns: 1fr;
+            }
         }
         
         .contact-form {
             background: #ffffff;
+            border-radius: 16px;
             padding: 32px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
         
-        .form-group {
-            margin-bottom: 24px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
+        .form-title {
+            font-size: 24px;
             font-weight: 600;
-            color: var(--color-primary);
-            font-size: 14px;
+            color: #01807e;
+            margin-bottom: 24px;
         }
         
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
+            margin-bottom: 16px;
         }
         
-        textarea.input-field {
-            resize: vertical;
+        @media (max-width: 500px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333333;
+            margin-bottom: 8px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 10px 13px;
+            border: 1px solid rgba(0,0,0,.14);
+            border-radius: 2px;
+            font-size: 14px;
+            transition: border-color 200ms;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #6db8ff;
+            box-shadow: 0 0 0 3px rgba(43,114,165,.29);
+        }
+        
+        .form-textarea {
+            width: 100%;
+            padding: 10px 13px;
+            border: 1px solid rgba(0,0,0,.14);
+            border-radius: 2px;
+            font-size: 14px;
             min-height: 120px;
+            resize: vertical;
+            transition: border-color 200ms;
+        }
+        
+        .form-textarea:focus {
+            outline: none;
+            border-color: #6db8ff;
+            box-shadow: 0 0 0 3px rgba(43,114,165,.29);
+        }
+        
+        .submit-button {
+            background: #01807e;
+            color: #ffffff;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 300ms ease;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            background: #00807e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
         
         .contact-info {
+            background: linear-gradient(135deg, #01807e 0%, #00807e 100%);
+            color: #ffffff;
+            border-radius: 16px;
             padding: 32px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
         
         .contact-info h3 {
             font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 32px;
-            color: var(--color-primary);
-        }
-        
-        .info-item {
-            margin-bottom: 24px;
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-        
-        .info-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--color-accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            flex-shrink: 0;
-        }
-        
-        .info-content h4 {
-            font-size: 16px;
             font-weight: 600;
+            margin-bottom: 24px;
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+            padding-left: 8px;
+            border-left: 3px solid #7cd1f9;
+        }
+        
+        .contact-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.9;
             margin-bottom: 4px;
-            color: var(--color-primary);
         }
         
-        .info-content p {
-            color: var(--color-text-muted);
-            font-size: 14px;
-            line-height: 1.5;
+        .contact-value {
+            font-size: 16px;
+            font-weight: 500;
         }
         
-        .social-links {
-            display: flex;
-            gap: 16px;
-            margin-top: 32px;
-        }
-        
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: var(--color-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .footer {
+            background: #333333;
             color: #ffffff;
-            text-decoration: none;
-            transition: var(--transition-default);
-        }
-        
-        .social-link:hover {
-            background: var(--color-accent);
-            transform: translateY(-4px);
-        }
-        
-        footer {
-            background: var(--color-primary);
-            color: #ffffff;
-            padding: 48px 0 24px;
+            padding: 45px 20px 24px;
+            margin-top: 45px;
         }
         
         .footer-grid {
+            max-width: 1280px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 48px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
             margin-bottom: 32px;
         }
         
-        .footer-column h3 {
+        .footer-column h4 {
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 16px;
-            color: var(--color-accent);
-        }
-        
-        .footer-column p, .footer-column a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 14px;
-            line-height: 1.8;
-            transition: color 0.3s;
-        }
-        
-        .footer-column a:hover {
-            color: var(--color-accent);
+            color: #7cd1f9;
         }
         
         .footer-links {
@@ -415,250 +330,202 @@
             margin-bottom: 8px;
         }
         
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.2);
-            padding-top: 24px;
+        .footer-links a {
+            color: #c9dae1;
+            text-decoration: none;
+            transition: color 300ms ease;
+            font-size: 14px;
+        }
+        
+        .footer-links a:hover {
+            color: #7cd1f9;
+        }
+        
+        .social-links {
             display: flex;
-            justify-content: space-between;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: #7cd1f9;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 300ms ease;
+        }
+        
+        .social-icon:hover {
+            background: #78cbf2;
+            transform: scale(1.1);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+            text-align: center;
         }
         
         .footer-bottom p {
-            color: rgba(255,255,255,0.8);
             font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 8px;
         }
         
         .footer-legal {
             display: flex;
+            justify-content: center;
             gap: 24px;
+            margin-top: 16px;
         }
         
         .footer-legal a {
-            color: rgba(255,255,255,0.8);
+            color: #c9dae1;
             text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 300ms ease;
         }
         
         .footer-legal a:hover {
-            color: var(--color-accent);
+            color: #7cd1f9;
         }
         
-        .mobile-menu {
-            display: none;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: block;
-                background: none;
-                border: none;
-                color: #ffffff;
-                font-size: 24px;
-                cursor: pointer;
-            }
-            
-            .hero-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-text h1 {
-                font-size: 32px;
-            }
-            
-            .hero-image {
-                height: 250px;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
+        .badge {
+            display: inline-block;
+            background: #f8bb86;
+            color: #333333;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 8px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">FOCUS LEARNING</div>
-            <ul class="nav-links">
-                <li><a href="#flc">FLC (MALAYSIA)</a></li>
-                <li><a href="#focus">OUR FOCUS</a></li>
-                <li><a href="#footprint">OUR FOOTPRINT</a></li>
-                <li><a href="#team">OUR TEAM</a></li>
-                <li><a href="#programs">PUBLIC PROGRAMS</a></li>
-                <li><a href="#appointment">APPOINTMENT</a></li>
-            </ul>
-            <button class="mobile-menu">☰</button>
-        </nav>
+    <header class="hero-section">
+        <h1 class="hero-title">FOCUS LEARNING SOLUTIONS</h1>
+        <p class="hero-subtitle">Transforming Organizations Since 1996</p>
     </header>
-
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>FOCUS LEARNING SOLUTIONS</h1>
-                    <p>Since 1996, Focus Learning have been engaged as consultants, facilitators, as well as trainers to a wide and diversified range of organizations and countries. We offer a wide variety of programs to help transform our clients.</p>
-                    <a href="#contact" class="btn btn-primary">DISCOVER MORE</a>
-                </div>
-                <div class="hero-image">
-                    <div class="hero-image-content">
-                        <h2>27+ Years</h2>
-                        <p>of Excellence in Learning</p>
+    
+    <nav class="nav-grid">
+        <div class="nav-card">
+            <div class="nav-card-title">FLC Malaysia</div>
+        </div>
+        <div class="nav-card">
+            <div class="nav-card-title">Our Focus</div>
+        </div>
+        <div class="nav-card">
+            <div class="nav-card-title">Our Footprint</div>
+        </div>
+        <div class="nav-card">
+            <div class="nav-card-title">Our Team</div>
+        </div>
+        <div class="nav-card">
+            <div class="nav-card-title">Public Programs</div>
+        </div>
+        <div class="nav-card">
+            <div class="nav-card-title">Appointment</div>
+        </div>
+    </nav>
+    
+    <div class="content-wrapper">
+        <section class="info-section">
+            <h2 class="section-header">Empowering Excellence Through Learning</h2>
+            <p class="info-text">Since 1996, Focus Learning have been engaged as consultants, facilitators, as well as trainers to a wide and diversified range of organizations and countries. We offer a wide variety of programs to help transform our clients.</p>
+            <a href="#" class="cta-button">Discover More</a>
+        </section>
+        
+        <div class="split-container">
+            <div class="contact-form">
+                <h3 class="form-title">Get In Touch</h3>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">FIRST NAME *</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">LAST NAME *</label>
+                            <input type="text" class="form-input" required>
+                        </div>
                     </div>
+                    <div class="form-group">
+                        <label class="form-label">EMAIL *</label>
+                        <input type="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">MESSAGE *</label>
+                        <textarea class="form-textarea" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">SEND MESSAGE</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-item">
+                    <div class="contact-label">Office Address</div>
+                    <div class="contact-value">Unit 516, Kelana Centre Point<br>Block A, Jalan SS7/19<br>47301 Petaling Jaya<br>Selangor, Malaysia</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">WhatsApp</div>
+                    <div class="contact-value">+601-9437-5242</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Telephone</div>
+                    <div class="contact-value">+603-7612-9141<br>+603-7612-9142</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Cellphone</div>
+                    <div class="contact-value">+601-9315-0209</div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="card service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3>OUR FOCUS</h3>
-                    <p>Targeted learning solutions designed to meet your specific organizational needs and goals.</p>
-                </div>
-                <div class="card service-card">
-                    <div class="service-icon">🌍</div>
-                    <h3>OUR FOOTPRINT</h3>
-                    <p>Global reach with local expertise, serving clients across multiple countries and industries.</p>
-                </div>
-                <div class="card service-card">
-                    <div class="service-icon">👥</div>
-                    <h3>OUR TEAM</h3>
-                    <p>Expert facilitators and consultants with decades of combined experience in transformational learning.</p>
-                </div>
-                <div class="card service-card">
-                    <div class="service-icon">📚</div>
-                    <h3>PUBLIC PROGRAMS</h3>
-                    <p>Open enrollment programs designed to enhance professional skills and personal development.</p>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="#">FLC (Malaysia)</a></li>
+                    <li><a href="#">Our Focus</a></li>
+                    <li><a href="#">Our Footprint</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Public Programs</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:hamzah@focuslearning.com.my">hamzah@focuslearning.com.my</a></li>
+                    <li><a href="mailto:malik@focuslearning.com.my">malik@focuslearning.com.my</a></li>
+                    <li><a href="http://www.focuslearning.com.my">www.focuslearning.com.my</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Facebook">f</a>
+                    <a href="#" class="social-icon" aria-label="Twitter">t</a>
+                    <a href="#" class="social-icon" aria-label="Youtube">y</a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-grid">
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label>NAME *</label>
-                            <div class="form-row">
-                                <input type="text" class="input-field" placeholder="FIRST" required>
-                                <input type="text" class="input-field" placeholder="LAST" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>EMAIL *</label>
-                            <input type="email" class="input-field" required>
-                        </div>
-                        <div class="form-group">
-                            <label>MESSAGE *</label>
-                            <textarea class="input-field" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">SEND MESSAGE</button>
-                    </form>
-                </div>
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="info-item">
-                        <div class="info-icon">📍</div>
-                        <div class="info-content">
-                            <h4>Address</h4>
-                            <p>Unit 516, Kelana Centre Point<br>
-                            Block A, Jalan SS7/19<br>
-                            47301 Petaling Jaya<br>
-                            Selangor, Malaysia</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">📱</div>
-                        <div class="info-content">
-                            <h4>Phone</h4>
-                            <p>Whatsapp: +601-9437-5242<br>
-                            Telephone: +603-7612-9141<br>
-                            +603-7612-9142<br>
-                            Cellphone: +601-9315-0209</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">✉️</div>
-                        <div class="info-content">
-                            <h4>Email</h4>
-                            <p>hamzah@focuslearning.com.my<br>
-                            malik@focuslearning.com.my</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">🌐</div>
-                        <div class="info-content">
-                            <h4>Website</h4>
-                            <p>www.focuslearning.com.my</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">f</a>
-                        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
-                        <a href="#" class="social-link" aria-label="Youtube">▶</a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>About Focus Learning</h3>
-                    <p>Since 1996, we have been transforming organizations through innovative learning solutions, expert consultation, and world-class training programs. Our commitment to excellence has made us a trusted partner for businesses across Malaysia and beyond.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Explore</h3>
-                    <ul class="footer-links">
-                        <li><a href="#flc">FLC (Malaysia)</a></li>
-                        <li><a href="#focus">Our Focus</a></li>
-                        <li><a href="#footprint">Our Footprint</a></li>
-                        <li><a href="#team">Our Team</a></li>
-                        <li><a href="#programs">Public Programs</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Connect</h3>
-                    <p>Facebook<br>
-                    Twitter<br>
-                    Youtube<br>
-                    Linkedin-in</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>Copyright © 2023 Focus Learning Solutions</p>
-                <div class="footer-legal">
-                    <a href="#">PRIVACY POLICY</a>
-                    <a href="#">TERMS & SERVICES</a>
-                </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2023 Focus Learning Solutions</p>
+            <div class="footer-legal">
+                <a href="#">PRIVACY POLICY</a>
+                <a href="#">TERMS & SERVICES</a>
             </div>
         </div>
     </footer>
